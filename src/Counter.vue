@@ -6,7 +6,17 @@
 
 
 <script>
+import { eventEmitter } from "./main";
 export default {
-  props: ["counter"],
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+  created() {
+    eventEmitter.$on("counterUpadated", (num) => {
+      this.counter += num  
+    });
+  }, 
 };
 </script>

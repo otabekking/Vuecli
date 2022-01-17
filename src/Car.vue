@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { eventEmitter } from "./main";
+
 export default {
   // props qushamiz hozi chunki biz app carga CarName deganmiz uchun uni topish uchun Props yordamidan foydalanmiz
 
@@ -27,7 +29,7 @@ export default {
     },
     CarYear: Number,
     changeFunc: Function,
-    counter: Number,
+  
   },
   methods: {
     changeName() {
@@ -35,7 +37,8 @@ export default {
       this.$emit("changeAllname", this.CarName);
     },
     updateCounter() {
-      this.$emit("counterUpdated", this.counter + 1);
+      // this.$emit("counterUpdated", this.counter + 1);
+      eventEmitter.$emit('counterUpadated',3)
     },
   },
 

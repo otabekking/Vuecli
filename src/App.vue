@@ -8,11 +8,10 @@
       Parent:
       {{ CarName }}
     </h1>
-    <counter-App :counter="counter"></counter-App>
+    <counter-App></counter-App>
     <app-car
       :CarName="CarName"
       :CarYear="CarYear"
-      :counter="counter"
       :changeFunc="changeToAudin"
       @changeAllname="CarName = $event"
       @counterUpdated="counter = $event"
@@ -33,7 +32,6 @@ export default {
 
       CarName: "Ford",
       CarYear: 2000,
-      counter: 0,
     };
   },
   methods: {
