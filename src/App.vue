@@ -8,11 +8,14 @@
       Parent:
       {{ CarName }}
     </h1>
+    <counter-App :counter="counter"></counter-App>
     <app-car
       :CarName="CarName"
       :CarYear="CarYear"
+      :counter="counter"
       :changeFunc="changeToAudin"
       @changeAllname="CarName = $event"
+      @counterUpdated="counter = $event"
     ></app-car>
   </div>
 </template>
@@ -20,6 +23,7 @@
 <script>
 // this car's second view in this App
 import Car from "./Car.vue";
+import Counter from "./Counter.vue";
 
 export default {
   data() {
@@ -29,6 +33,7 @@ export default {
 
       CarName: "Ford",
       CarYear: 2000,
+      counter: 0,
     };
   },
   methods: {
@@ -39,6 +44,7 @@ export default {
 
   components: {
     appCar: Car,
+    counterApp: Counter,
   },
 };
 </script>

@@ -8,6 +8,7 @@
 
     <button @click="changeName">Change Name</button>
     <button @click="changeFunc()">Change Car</button>
+    <button @click="updateCounter">Counter num</button>
   </div>
 </template>
 
@@ -26,11 +27,15 @@ export default {
     },
     CarYear: Number,
     changeFunc: Function,
+    counter: Number,
   },
   methods: {
     changeName() {
       this.CarName = " MERCEDES";
       this.$emit("changeAllname", this.CarName);
+    },
+    updateCounter() {
+      this.$emit("counterUpdated", this.counter + 1);
     },
   },
 
