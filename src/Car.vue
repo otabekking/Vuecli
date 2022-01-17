@@ -1,17 +1,22 @@
 <template>
-<div>
-  <h2>Car</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ad libero laudantium iusto natus ipsa.
-  </p>
-</div>
+  <div>
+    <h2>
+      {{ carName }}
+    </h2>
+  </div>
 </template>
 
 <script>
 import { eventEmitter } from "./main";
 
-export default {};
+export default {
+  props: ["carName"],
+};
 </script>
 
 <style>
+div {
+  border: 1px solid #000;
+  padding: 10px;
+}
 </style>
