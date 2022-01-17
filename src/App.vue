@@ -1,6 +1,9 @@
 <template>
   <div>
-    <app-car carName="Mazda"></app-car>
+    <app-car>
+      <h2>Mazda -</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </app-car>
   </div>
 </template>
 

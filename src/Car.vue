@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h2>
-      {{ carName }}
-    </h2>
+   <slot></slot>
   </div>
 </template>
 
@@ -10,7 +8,7 @@
 import { eventEmitter } from "./main";
 
 export default {
-  props: ["carName"],
+ 
 };
 </script>
 
