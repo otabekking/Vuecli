@@ -1,8 +1,8 @@
 <template>
   <div>
     <app-car>
-      <h2>Mazda -</h2>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <h2 slot="title">{{ carName }}</h2>
+      <p slot="text">Lorem ipsum dolor sit amet.</p>
     </app-car>
   </div>
 </template>
@@ -12,12 +12,21 @@
 import Car from "./Car.vue";
 
 export default {
+  data() {
+    return {
+      carName: "Ford",
+    };
+  },
   components: {
     appCar: Car,
   },
 };
 </script>
 
-<style>
+<style scoped>
+h2 {
+  color: rgb(175, 109, 79);
+}
+</style>>
 
-</style>
+

@@ -1,15 +1,17 @@
 <template>
   <div>
-   <slot></slot>
+    <!-- <slot></slot> -->
+    <slot name="title"></slot>
+    <hr />
+    <hr />
+    <slot name="text"></slot>
   </div>
 </template>
 
 <script>
 import { eventEmitter } from "./main";
 
-export default {
- 
-};
+export default {};
 </script>
 
 <style>
