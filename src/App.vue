@@ -1,32 +1,25 @@
 <template>
   <div>
-    <app-car>
-      <h2 slot="title">{{ carName }}</h2>
-      <p slot="text">Lorem ipsum dolor sit amet.</p>
-    </app-car>
-  </div>
+    <h2 v-colored v-if="visible">
+      {{ title }}
+    </h2>
+    <button @click="visible = !visible">Toggle</button>
+    <button @click="title = 'new title'">Change</button>
+  </div> 
 </template>
 
 <script>
-// this car's second view in this App
-import Car from "./Car.vue";
-
 export default {
   data() {
     return {
-      carName: "Ford",
+      title: "hello i am vue",
+      visible: true,
     };
-  },
-  components: {
-    appCar: Car,
   },
 };
 </script>
 
 <style scoped>
-h2 {
-  color: rgb(175, 109, 79);
-}
 </style>>
 
 
