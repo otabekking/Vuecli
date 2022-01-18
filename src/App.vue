@@ -1,10 +1,17 @@
 <template>
   <div>
-    <h2 v-colored:background.font="'yellow'">
+    <h2>
       {{ title }}
     </h2>
-    <h2 v-colored:color.delay="'blue'">{{ title }}</h2>
-    <h2 v-fontL>Lorem ipsum dolor sit.</h2>
+    <h2>
+      {{ title | lowercase }}
+    </h2>
+    <h2>
+      {{ title | uppercase }}
+    </h2>
+    <h2>
+      {{ title | uppercase | lowercase }}
+    </h2>
   </div>
 </template>
 
@@ -15,11 +22,9 @@ export default {
       title: "Hello i am vue",
     };
   },
-  directives: {
-    fontL: {
-      bind(el, binding, vnode) {
-        el.style.fontSize = "30px";
-      },
+  filters: {
+    lowercase(value) {
+      return value.toLowerCase();
     },
   },
 };
