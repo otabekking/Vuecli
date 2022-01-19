@@ -1,33 +1,31 @@
 <template>
   <div>
-    <h2>
-      {{ title }}
-    </h2>
-    <input type="text" v-model="searchName" />
+    <h2>Form Input</h2>
 
-    <ul>
-      <li v-for="qalam of filterNames">{{ qalam }}</li>
-    </ul>
+    <label for="">
+      <input type="checkbox" value="Instagram" v-model="socila" /> Instagram
+    </label>
+
+    <label for="">
+      <input type="checkbox" value="Vk" v-model="socila" /> Vk
+    </label>
+
+    <label for="">
+      <input type="checkbox" value="Telegram" v-model="socila" /> Telegram
+    </label>
     <hr />
-
-    <app-list></app-list>
+    <ul>
+      <li v-for="s in socila">{{ s }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
-import listMixin from "./listMixin";
 export default {
   data() {
     return {
-      title: "Hello i am vue",
+      socila: ["Vk"],
     };
-  },
-  mixins: [listMixin],
-
-  filters: {
-    lowercase(value) {
-      return value.toLowerCase();
-    },
   },
 };
 </script>
