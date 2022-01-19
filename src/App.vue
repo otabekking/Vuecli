@@ -1,22 +1,9 @@
 <template>
   <div>
     <h2>Form Input</h2>
-
-    <label for="">
-      <input type="checkbox" value="Instagram" v-model="socila" /> Instagram
-    </label>
-
-    <label for="">
-      <input type="checkbox" value="Vk" v-model="socila" /> Vk
-    </label>
-
-    <label for="">
-      <input type="checkbox" value="Telegram" v-model="socila" /> Telegram
-    </label>
-    <hr />
-    <ul>
-      <li v-for="s in socila">{{ s }}</li>
-    </ul>
+    <select v-model="standing">
+      <option v-for="s in socialList">{{ s }}</option>
+    </select>
   </div>
 </template>
 
@@ -24,7 +11,8 @@
 export default {
   data() {
     return {
-      socila: ["Vk"],
+      standing: "Telegram",
+      socialList: ["Vk", "Instagram", "Telegram"],
     };
   },
 };
