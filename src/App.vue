@@ -1,19 +1,24 @@
 <template>
   <div>
     <h2>Form Input</h2>
-    <select v-model="standing">
-      <option v-for="s in socialList">{{ s }}</option>
-    </select>
+    <app-Onoff v-model="switched"></app-Onoff>
+    <div>
+      <h3 v-if="switched">switched</h3>
+      <h3 v-else>not switched</h3>
+    </div>
   </div>
 </template>
 
 <script>
+import onOff from "./onOff.vue";
 export default {
   data() {
     return {
-      standing: "Telegram",
-      socialList: ["Vk", "Instagram", "Telegram"],
+      switched: false,
     };
+  },
+  components: {
+    appOnoff: onOff,
   },
 };
 </script>
